@@ -531,7 +531,7 @@ span {
     html {
         font-size: 55%;
     }
-    .services-container {
+    .skills-container {
         padding-bottom: 7rem;
         grid-template-columns: repeat(2, 1fr);
         margin: 0 5rem;
@@ -558,7 +558,7 @@ span {
     .timeline-dot {
         left: 0;
     }
-    .services {
+    .skills {
         padding-bottom: 7rem;
     }
     
@@ -618,10 +618,10 @@ span {
     .home-img img {
         width: 56vw;
     }
-    .services h2 {
+    .skills h2 {
         margin-bottom: 3rem;
     }
-    .services-container {
+    .skills-container {
         grid-template-columns: repeat(1, 1fr);
     }
 }
