@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-portfolio-deployment
+spec:
+  replicas: 2 # You can adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: my-port
+  template:
+    metadata:
+      labels:
+        app: my-port
+    spec:
+      containers:
+        - name: my-port
+          image: blanktorious/my-port # Replace with the actual image tag
+          ports:
+            - containerPort: 80 # Replace with the port your Tetris game listens on
