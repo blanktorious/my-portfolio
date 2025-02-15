@@ -4,31 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JD's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header/header.css">
+    <link rel="stylesheet" href="css/page-1/home.css">
+    <link rel="stylesheet" href="css/page-2/skills.css">
+    <link rel="stylesheet" href="css/page-3/project.css">
+    <link rel="stylesheet" href="css/page-4/journey.css">
+    <link rel="stylesheet" href="css/page-5/contact.css">
+    <link rel="stylesheet" href="css/footer/footer.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="icon" href="images/gojo-dp.jpg">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
     <header class="header">
-        <a href="#home" class="logo">JOHN DOMINIQUE<span> DE MONTEVERDE</span></a>
+        <a href="#home" class="logo">JOHN D.<span> DE MONTEVERDE</span></a>
 
         <i class='bx bx-menu' id="menu-icon"></i>
 
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
-            <a href="#education">Education</a>
             <a href="#skills">Skills</a>
-            <a href="#testimonials">Testimonials</a>
+            <a href="#projects">Projects</a>
+            <a href="#journey">My Journey</a>
+            <!-- <a href="#testimonials">Testimonials</a> -->
             <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <section class="home" id="home">
         <div class="home-content">
-            <h1>Hi, It's <span>JD</span></h1>
+            <h1>Hi, It's <span>J.D.</span></h1>
             <h3 class="text-animation">I'm a <span></span></h3>
             <p>
                 I started my journey in the tech industry with 
-                <span class="highlight">zero knowledge to 1095 days</span> 
+                <span class="highlight">zero knowledge to almost 3 years</span> 
                 working as DevOps Engineer. 
                 Along the way, I’ve embraced challenges, built solutions, and grown to truly enjoy what I do. 
                 This journey has been fueled by growth, curiosity, love for technology, solving problems and creating value.
@@ -41,7 +51,7 @@
                 <a href="#"><i class="bx bxl-linkedin"></i></a>
                 <a href="#"><i class="bx bxl-github"></i></a>
                 <a href="#"><i class="bx bxl-instagram-alt"></i></a>
-                <a href="#"><i class="bx bxl-twitter"></i></a>
+                <!-- <a href="#"><i class="bx bxl-twitter"></i></a> -->
             </div>
 
             <div class="btn-group">
@@ -50,12 +60,267 @@
             </div>
         </div>            
             <div class="home-img">
-                <img src="gojo-dp.jpg" alt="">
+                <img src="images/gojo-dp.jpg" alt="">
             </div>
     </section>
 
-    <section class="education" id="education">
-        <h2 class="heading">Education</h2>
+    <section class="skills" id="skills">
+        <div class="skills-container">
+            <h2>Essential Tools I Use</h2>
+            <p class="description">
+                Explore the essential tools and technologies I use for DevSecOps practices.
+            </p>
+    
+            <!-- Dropdown for Filtering -->
+            <div class="filter-dropdown-container">
+                <select id="skillsFilter" class="filter-dropdown">
+                    <option value="all">All</option>
+                    <option value="development">Development</option>
+                    <option value="security">Security</option>
+                    <option value="operations">Operations</option>
+                    <option value="cloud">Cloud</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+    
+            <div class="skills-grid">
+                <!-- Skill Card for Development -->
+                <div class="skill-card" data-category="development">
+                    <figure>
+                        <img src="/images/logos/css.png" alt="CSS">
+                    </figure>
+                    <div>
+                        <h3>CSS</h3>
+                        <p>Programming Language</p>
+                    </div>
+                </div>
+                <div class="skill-card" data-category="development">
+                    <figure>
+                        <img src="/images/logos/html.png" alt="HTML">
+                    </figure>
+                    <div>
+                        <h3>HTML</h3>
+                        <p>Programming Language</p>
+                    </div>
+                </div>
+                <div class="skill-card" data-category="development">
+                    <figure>
+                        <img src="/images/logos/js.png" alt="JavaScript">
+                    </figure>
+                    <div>
+                        <h3>JavaScript</h3>
+                        <p>Programming Language</p>
+                    </div>
+                </div>
+                <div class="skill-card" data-category="development">
+                    <figure>
+                        <img src="/images/logos/git.png" alt="Git">
+                    </figure>
+                    <div>
+                        <h3>Git</h3>
+                        <p>Version Control</p>
+                    </div>
+                </div>
+                <div class="skill-card" data-category="development">
+                    <figure>
+                        <img src="/images/logos/linux.png" alt="Linux">
+                    </figure>
+                    <div>
+                        <h3>Linux</h3>
+                        <p>Operating System</p>
+                    </div>
+                </div>
+                <div class="skill-card" data-category="development">
+                    <figure>
+                        <img src="/images/logos/bash.png" alt="Bash">
+                    </figure>
+                    <div>
+                        <h3>Bash</h3>
+                        <p>Scripting</p>
+                    </div>
+                </div>
+                <div class="skill-card" data-category="development">
+                    <figure>
+                        <img src="/images/logos/github.png" alt="Github">
+                    </figure>
+                    <div>
+                        <h3>Github</h3>
+                        <p>Repository and Version Control</p>
+                    </div>
+                </div>
+                <div class="skill-card" data-category="development">
+                    <figure>
+                        <img src="/images/logos/gitlab.png" alt="Gitlab">
+                    </figure>
+                    <div>
+                        <h3>Gitlab</h3>
+                        <p>Repository and Version Control</p>
+                    </div>
+                </div>
+                <!-- Skill Card for Security -->
+                <div class="skill-card" data-category="security">
+                    <figure>
+                        <img src="/images/logos/sonarqube.png" alt="SonarQube">
+                    </figure>
+                    <div>
+                        <h3>SonarQube</h3>
+                        <p>Security</p>
+                    </div>
+                </div>
+                <div class="skill-card" data-category="security">
+                    <figure>
+                        <img src="/images/logos/trivy.png" alt="Trivy">
+                    </figure>
+                    <div>
+                        <h3>Trivy</h3>
+                        <p>Security</p>
+                    </div>
+                </div>
+                <!-- Skill Card for Operations -->
+                <div class="skill-card" data-category="operations">
+                    <figure>
+                        <img src="/images/logos/terraform.png" alt="Terraform">
+                    </figure>
+                    <div>
+                        <h3>Terraform</h3>
+                        <p>Deployment</p>
+                    </div>
+                </div>
+                <div class="skill-card" data-category="operations">
+                    <figure>
+                        <img src="/images/logos/docker.png" alt="Docker">
+                    </figure>
+                    <div>
+                        <h3>Docker</h3>
+                        <p>Build and Deployment</p>
+                    </div>
+                </div>
+                <div class="skill-card" data-category="operations">
+                    <figure>
+                        <img src="/images/logos/kubernetes.png" alt="Kubernetes">
+                    </figure>
+                    <div>
+                        <h3>Kubernetes</h3>
+                        <p>Orchestration</p>
+                    </div>
+                </div>
+                <div class="skill-card" data-category="operations">
+                    <figure>
+                        <img src="/images/logos/prometheus.png" alt="Prometheus">
+                    </figure>
+                    <div>
+                        <h3>Prometheus</h3>
+                        <p>Monitoring</p>
+                    </div>
+                </div>
+                <div class="skill-card" data-category="operations">
+                    <figure>
+                        <img src="/images/logos/grafana.png" alt="Grafana">
+                    </figure>
+                    <div>
+                        <h3>Grafana</h3>
+                        <p>Monitoring & Logging</p>
+                    </div>
+                </div>
+                <div class="skill-card" data-category="operations">
+                    <figure>
+                        <img src="/images/logos/rabbitmq.png" alt="RabbitMQ">
+                    </figure>
+                    <div>
+                        <h3>RabbitMQ</h3>
+                        <p>Message Queuing</p>
+                    </div>
+                </div>
+                <div class="skill-card" data-category="operations">
+                    <figure>
+                        <img src="/images/logos/postgresql.png" alt="PostgresQL">
+                    </figure>
+                    <div>
+                        <h3>PostgresQL</h3>
+                        <p>Database</p>
+                    </div>
+                </div>
+                <div class="skill-card" data-category="operations">
+                    <figure>
+                        <img src="/images/logos/github.png" alt="Github Actions">
+                    </figure>
+                    <div>
+                        <h3>Github Actions</h3>
+                        <p>Automation</p>
+                    </div>
+                </div>
+                <div class="skill-card" data-category="operations">
+                    <figure>
+                        <img src="/images/logos/gitlab.png" alt="Gitlab Pipelines">
+                    </figure>
+                    <div>
+                        <h3>Gitlab Pipelines</h3>
+                        <p>Automation</p>
+                    </div>
+                </div>
+                <!-- Skill Card for Cloud -->
+                <div class="skill-card" data-category="cloud">
+                    <figure>
+                        <img src="/images/logos/azure.png" alt="Azure">
+                    </figure>
+                    <div>
+                        <h3>Azure</h3>
+                        <p>Cloud Provider</p>
+                    </div>
+                </div>
+                <div class="skill-card" data-category="cloud">
+                    <figure>
+                        <img src="/images/logos/aws.png" alt="AWS">
+                    </figure>
+                    <div>
+                        <h3>AWS</h3>
+                        <p>Cloud Provider</p>
+                    </div>
+                </div>
+
+                <!-- Additional Skill Cards -->
+                <!-- Just copy and paste the following block and modify the details for each new skill -->
+                <!--
+                <div class="skill-card" data-category="your-category">
+                    <figure>
+                        <img src="path/to/image.svg" alt="Skill Name">
+                    </figure>
+                    <div>
+                        <h3>Skill Name</h3>
+                        <p>Description</p>
+                    </div>
+                </div>
+                -->
+                <!-- Add more skill cards as needed -->
+            </div>
+            
+    </section>
+    
+    <section class="projects" id="projects">
+        <h2 class="heading">Projects</h2>
+        <div class="projects-container">
+            <div class="projects-box">
+                <div class="projects-info">
+                    <h4>DevSecOps Pipeline Project</h4>
+                    <p>
+                        This website portfolio that you are seeing now revolves around a DevSecOps Project.
+                    </p>
+                </div>
+            </div>
+            <div class="projects-box">
+                <div class="projects-info">
+                    <h4>Terraform</h4>
+                    <p>
+                        This project is related to the previous one.
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="journey" id="journey">
+        <h2 class="heading">My Journey</h2>
         <div class="timeline-items"> 
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
@@ -72,84 +337,31 @@
                 <div class="timeline-date">2021</div>
                 <div class="timeline-content">
                     <h3>Internship - Erouvotika</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Quae harum suscipit libero natus laborum nam vitae quod 
-                        ratione voluptate esse?
-                    </p>
                 </div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
-                <div class="timeline-date">2022-Current</div>
+                <div class="timeline-date">Apr 2022- Mar 2024</div>
                 <div class="timeline-content">
-                    <h3>Current Job</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Quae harum suscipit libero natus laborum nam vitae quod 
-                        ratione voluptate esse?
-                    </p>
+                    <h3>Junior Software Developer - Inchcape Digital</h3>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="skills" id="skills">
-        <h2 class="heading">Skills</h2>
-        <div class="skills-container">
-            <div class="skill-box">
-                <div class="skill-info">
-                    <h4>Azure</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Laudantium tempore rerum beatae autem consectetur, ipsum aut, ut 
-                        neque molestiae veniam necessitatibus quisquam explicabo natus minima 
-                        quas vel incidunt, unde perferendis!
-                    </p>
-                </div>
-            </div>
-            <div class="skill-box">
-                <div class="skill-info">
-                    <h4>Kubernetes</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Laudantium tempore rerum beatae autem consectetur, ipsum aut, ut 
-                        neque molestiae veniam necessitatibus quisquam explicabo natus minima 
-                        quas vel incidunt, unde perferendis!
-                    </p>
-                </div>
-            </div>
-            <div class="skill-box">
-                <div class="skill-info">
-                    <h4>CI/CD</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Laudantium tempore rerum beatae autem consectetur, ipsum aut, ut 
-                        neque molestiae veniam necessitatibus quisquam explicabo natus minima 
-                        quas vel incidunt, unde perferendis!
-                    </p>
-                </div>
-            </div>
-            <div class="skill-box">
-                <div class="skill-info">
-                    <h4>Docker</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Laudantium tempore rerum beatae autem consectetur, ipsum aut, ut 
-                        neque molestiae veniam necessitatibus quisquam explicabo natus minima 
-                        quas vel incidunt, unde perferendis!
-                    </p>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Mar 2024-Current</div>
+                <div class="timeline-content">
+                    <h3>DevOps Engineer - Inchcape Digital</h3>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="testimonials" id="testimonials">
+    <!-- <section class="testimonials" id="testimonials">
         <div class="testimonials-box">
             <h2 class="heading">Testimonials</h2>
             <div class="wrapper">
                 <div class="testimonial-item">
-                    <img src="1x11.jpg" alt="">
+                    <img src="images/1x11.jpg" alt="">
                     <h2>Toge Inumaki</h2>
                     <div class="rating">
                         <i class="bx bxs-star" id="star"></i>
@@ -165,7 +377,7 @@
                 </p>
                 </div>
                 <div class="testimonial-item">
-                    <img src="1x12.jpg" alt="">
+                    <img src="images/1x12.jpg" alt="">
                     <h2>Sukuna</h2>
                     <div class="rating">
                         <i class="bx bxs-star" id="star"></i>
@@ -181,7 +393,7 @@
                 </p>
                 </div>
                 <div class="testimonial-item">
-                    <img src="1x13.jpg" alt="">
+                    <img src="images/1x13.jpg" alt="">
                     <h2>Marilyn</h2>
                     <div class="rating">
                         <i class="bx bxs-star" id="star"></i>
@@ -197,7 +409,7 @@
                 </p>
                 </div>
             </div>
-    </section>
+    </section> -->
     
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me</span></h2>

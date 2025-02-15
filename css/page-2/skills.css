@@ -1,0 +1,110 @@
+.skills {
+    background: var(--second-bg-color); /* Your primary background color */
+    color: #ccc;
+}
+
+.skills h2 {
+    color: white;
+    text-align: left;
+    font-size: 5rem;
+    margin-top: 50px;
+    margin-bottom: 2rem;
+}
+
+.description {
+    margin-top: 2px;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.skills-container {
+    max-width: 2500px;
+    position: relative;
+}
+
+/* Dropdown Container */
+.filter-dropdown-container {
+    display: inline-block;
+    background: var(--main-color);
+    text-align: left;
+    box-shadow: 0 0 10px var(--main-color);
+    margin-bottom: 3rem;
+    border-radius: 26px;
+    font-size: 1.6rem;
+    border: 1px solid transparent;
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.filter-dropdown-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--main-color);
+}
+.filter-dropdown {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 1px solid #333;
+    background-color: #333;
+    color: white;
+    border-radius: 30px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 0px; /* Maintain alignment */
+    background: var(--second-bg-color); /* Setting the background for the grid */
+    border: 1px solid var(--main-color);
+    box-shadow: 0 0 10px var(--main-color);
+    border-radius: 20px; /* Rounded corners for the grid */
+    padding: 20px; /* Padding inside the grid */
+    background-color: #0a0e13;
+}
+
+.skill-card {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #2a2a2a;
+    padding: 10px;
+    border-radius: 8px; /* Maintaining smooth corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease;
+}
+
+
+.skill-card:hover {
+    background-color: #333;
+    border-color: #fff; /* Highlight on hover */
+    box-shadow: 0 0 10px var(--main-color);
+}
+
+figure {
+    background-color: #c5c5c5;
+    padding: 3px;
+    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+}
+
+figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.skill-card h3 {
+    margin-left: 5px;
+    color: #fff; /* Maintaining text color */
+    font-size: 1.3rem; /* Title size in skill card */
+}
+
+.skill-card p {
+    margin-left: 5px;
+    margin-top: 5px;
+    color: #686262; /* Maintaining text color */
+    font-size: 1.2rem; /* Title size in skill card */
+}

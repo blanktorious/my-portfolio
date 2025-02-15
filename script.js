@@ -20,7 +20,20 @@ window.onscroll = () => {
 };
 
 
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-};
+// This function will be executed when the page is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Attach an event listener to the dropdown for the 'change' event
+    document.getElementById('skillsFilter').addEventListener('change', function() {
+        var selectedCategory = this.value; // Get the currently selected option's value
+        var cards = document.querySelectorAll('.skill-card'); // Get all skill cards
+
+        // Iterate over each card and determine whether it should be shown or hidden
+        cards.forEach(card => {
+            if (selectedCategory === 'all' || card.getAttribute('data-category') === selectedCategory) {
+                card.style.display = ''; // Show the card
+            } else {
+                card.style.display = 'none'; // Hide the card
+            }
+        });
+    });
+});
