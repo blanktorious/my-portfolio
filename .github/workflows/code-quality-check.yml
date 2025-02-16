@@ -1,0 +1,42 @@
+name: Code Quality and Security Checks
+
+on:
+  push:
+    branches: [ main, feature/** ]
+
+jobs:
+  lint-and-security:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 'node'  # This will use the latest stable Node.js version
+
+    - name: Cache node modules
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Linting JS Files
+      run: npm run lint:js
+
+    - name: Linting CSS Files
+      run: npm run lint:css
+
+    - name: Linting HTML Files
+      run: npm run lint:html
+
+    - name: Run Snyk Security Check
+      uses: snyk/actions/node@master
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
