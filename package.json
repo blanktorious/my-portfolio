@@ -7,6 +7,7 @@
     "@eslint/js": "^9.20.0",
     "eslint": "^9.20.1",
     "globals": "^15.15.0",
+    "htmlhint": "^1.1.4",
     "stylelint": "^16.14.1",
     "stylelint-config-standard": "^37.0.0",
     "stylelint-config-standard-scss": "^14.0.0"
@@ -14,7 +15,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:js": "eslint '*.js'",
-    "lint:css": "stylelint '**/*.css'"
+    "lint:css": "stylelint '**/*.css'",
+    "lint:html": "htmlhint '**/*.html'"
   },
   "repository": {
     "type": "git",
