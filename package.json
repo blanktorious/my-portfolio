@@ -16,7 +16,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:js": "eslint '*.js'",
     "lint:css": "stylelint '**/*.css'",
-    "lint:html": "htmlhint '**/*.html'"
+    "lint:html": "htmlhint '**/*.html'",
+    "lint:all": "npm run lint:js && npm run lint:css && npm run lint:html"
   },
   "repository": {
     "type": "git",
