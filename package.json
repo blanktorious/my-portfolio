@@ -1,0 +1,21 @@
+{
+  "name": "my-port-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blanktorious/my-port-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blanktorious/my-port-practice/issues"
+  },
+  "homepage": "https://github.com/blanktorious/my-port-practice#readme"
+}
