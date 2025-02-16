@@ -3,8 +3,8 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2rem 12% 2rem;
-    background: rgba(0, 0, 0, 0.3);
+    padding: 2rem 12%;
+    background: rgb(0 0 0 / 30%);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
@@ -28,12 +28,15 @@
     cursor: pointer;
     transition: 0.3s ease;
 }
+
 .logo:hover {
     transform: scale(1.1);
 }
+
 .logo span {
     text-shadow: 0 0 25px var(--main-color);
 }
+
 .navbar a {
     font-size: 1.8rem;
     color: var(--text-color);
@@ -42,32 +45,35 @@
     transition: 0.3s ease;
     border-bottom: 3px solid transparent;
 }
+
 .navbar a:hover,
 .navbar a.active {
     color: var(--main-color);
     border-bottom: 3px solid var(--main-color);
 }
+
 .menu-icon {
     font-size: 3.6rem;
     color: var(--main-color);
     display: none;
-    opacity: 0%;
+    opacity: 0;
 
 }
 
-@media (max-width: 1063px) {
+@media (width <= 1063px) {
     .menu-icon {
         position: relative;
         left: 5px;
         display: block;
-        opacity: 100%;
+        opacity: 1;
     }
+
     .navbar {
         position: absolute;
         top: 100%;
         right: 0;
         width: 35%;
-        background: rgba(0, 0, 0, 0.8);
+        background: rgb(0 0 0 / 80%);
         backdrop-filter: blur(20px);
         display: none;
         flex-direction: column;
@@ -77,15 +83,18 @@
         border-bottom: 1px solid var(--main-color);
         text-align: center;
     }
+
     .navbar.active {
         display: flex;
     }
+
     .navbar a {
         display: block;
         font-size: 2rem;
         margin: 3rem 0;
         color: white;
     }
+
     .logo {
         font-size: 2rem;
     }

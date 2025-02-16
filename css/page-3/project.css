@@ -52,7 +52,7 @@
     line-height: 1.7;
 }
 
-@media (max-width: 1280px) {
+@media (width <= 1280px) {
     .projects h2 {
         font-size: 5rem;  
         margin-bottom: 3rem;  
@@ -67,7 +67,7 @@
     }
 }
 
-@media (max-width: 991px) {
+@media (width <= 991px) {
     .projects h2 {
         font-size: 4rem;  
     }
@@ -81,7 +81,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
     .projects-container {
         gap: 1.5rem;  
     }

@@ -36,7 +36,8 @@
     margin: 1.5rem 0;
     resize: none;
 }
-@media (max-width: 991px) {
+
+@media (width <= 991px) {
     .contact form {
         flex-direction: column;
     }
