@@ -5,38 +5,62 @@ on:
     branches: [ main, feature/** ]
 
 jobs:
-  lint-and-security:
-    name: Code Quality Check
+  pre-setup-lint:
+    name: Linting Pre-Setup
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
+      id: checkout-code
       uses: actions/checkout@v3
 
     - name: Set up Node.js
+      id: nod.js-setup
       uses: actions/setup-node@v3
       with:
         node-version: 'node'  # This will use the latest stable Node.js version
 
     - name: Cache node modules
+      id: cache-modules
       uses: actions/cache@v4
       with:
         path: ~/.npm
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
-
+      
     - name: Install Dependencies
+      id: npm-install
       run: npm install
 
+  lint-js:
+    name: Javascript Lint
+    needs: pre-setup-lint
+    runs-on: ubuntu-latest
+    steps:
     - name: Linting JS Files
       run: npm run lint:js
 
+  lint-css:
+    name: CSS Lint
+    needs: pre-setup-lint
+    runs-on: ubuntu-latest
+    steps:
     - name: Linting CSS Files
       run: npm run lint:css
 
+  lint-html:
+    name: HTML Lint
+    needs: pre-setup-lint
+    runs-on: ubuntu-latest
+    steps:
     - name: Linting HTML Files
       run: npm run lint:html
 
+  snyk-check:
+    name: Security Check by Snyk
+    needs: pre-setup-lint
+    runs-on: ubuntu-latest
+    steps:
     - name: Run Snyk Security Check
       uses: snyk/actions/node@master
       env:
