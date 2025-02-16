@@ -1,12 +1,13 @@
 // Global selections
-let menuIcon = document.querySelector('menu-icon');
+let menuIcon = document.querySelector('.menu-icon');
 let navbar = document.querySelector('.navbar');
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
-let lastKnownScrollPosition = 0;
-let ticking = false;
 const header = document.querySelector('.header');
 const sectionOffsets = {};
+
+let lastKnownScrollPosition = 0;
+let ticking = false;
 
 // Functions
 function updateHeaderVisibility() {
@@ -51,7 +52,7 @@ function updateNavLinks(top) {
 }
 
 function updateExperience() {
-    const startDate = new Date("2022-04-01"); // Customize your start date
+    const startDate = new Date("2022-04-01");
     const currentDate = new Date();
     let yearsExperience = currentDate.getFullYear() - startDate.getFullYear();
     let monthsExperience = currentDate.getMonth() - startDate.getMonth();
@@ -82,6 +83,18 @@ document.addEventListener('DOMContentLoaded', function() {
     updateExperience();
     document.getElementById('skillsFilter').addEventListener('change', filterSkills);
     updateHeaderVisibility();
+
+    // Menu icon toggle functionality
+    menuIcon.addEventListener('click', function() {
+        navbar.classList.toggle('active');
+    });
+
+    // Click outside the navbar to close it
+    document.addEventListener('click', function(event) {
+        if (!navbar.contains(event.target) && !menuIcon.contains(event.target) && navbar.classList.contains('active')) {
+            navbar.classList.remove('active');
+        }
+    });
 });
 
 window.addEventListener('scroll', function() {
@@ -99,13 +112,3 @@ window.addEventListener('scroll', function() {
 
 window.addEventListener('hashchange', updateHeaderVisibility);
 window.addEventListener('resize', calculateOffsets);
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const menuIcon = document.querySelector('.menu-icon');
-    const navbar = document.querySelector('.navbar');
-
-    menuIcon.addEventListener('click', function() {
-        navbar.classList.toggle('active');
-    });
-});
