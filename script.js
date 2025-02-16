@@ -6,7 +6,6 @@ let navLinks = document.querySelectorAll('header nav a');
 const header = document.querySelector('.header');
 const sectionOffsets = {};
 
-let lastKnownScrollPosition = 0;
 let ticking = false;
 
 // Functions
@@ -84,12 +83,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('skillsFilter').addEventListener('change', filterSkills);
     updateHeaderVisibility();
 
-    // Menu icon toggle functionality
     menuIcon.addEventListener('click', function() {
         navbar.classList.toggle('active');
     });
 
-    // Click outside the navbar to close it
     document.addEventListener('click', function(event) {
         if (!navbar.contains(event.target) && !menuIcon.contains(event.target) && navbar.classList.contains('active')) {
             navbar.classList.remove('active');
