@@ -1,5 +1,5 @@
 .projects {
-    background: var(--bg-color);  /* Assuming this should be --bg-color, not bg-color */
+    background: var(--bg-color);  
     color: black;
 }
 
@@ -35,7 +35,7 @@
     display: flex;
     flex-direction: column;
     text-align: left;
-    justify-content: flex-start;  /* Changed from 'justify-content: left;' which is invalid */
+    justify-content: flex-start;  
     align-items: baseline;
     padding: 5rem;
 }
@@ -54,39 +54,39 @@
 
 @media (max-width: 1280px) {
     .projects h2 {
-        font-size: 5rem;  /* Smaller font size for medium screens */
-        margin-bottom: 3rem;  /* Less margin for tighter spaces */
+        font-size: 5rem;  
+        margin-bottom: 3rem;  
     }
 
     .projects-container {
-        grid-template-columns: repeat(1, 1fr);  /* Change to single column layout earlier */
+        grid-template-columns: repeat(1, 1fr);  
     }
 
     .projects-box .projects-info {
-        padding: 2rem;  /* Less padding inside project boxes */
+        padding: 2rem;  
     }
 }
 
 @media (max-width: 991px) {
     .projects h2 {
-        font-size: 4rem;  /* Even smaller font size for smaller screens */
+        font-size: 4rem;  
     }
 
     .projects-info h4 {
-        font-size: 2.5rem;  /* Smaller font size for project titles */
+        font-size: 2.5rem;  
     }
 
     .projects-info p {
-        font-size: 1.4rem;  /* Smaller font size for descriptive text */
+        font-size: 1.4rem;  
     }
 }
 
 @media (max-width: 768px) {
     .projects-container {
-        gap: 1.5rem;  /* Reduce gap between items for small screens */
+        gap: 1.5rem;  
     }
 
     .projects-box {
-        height: 250px;  /* Slightly shorter boxes to fit better on small screens */
+        height: 250px;  
     }
 }

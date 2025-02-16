@@ -41,13 +41,13 @@ section {
     }
 }
 @media (max-width: 768px) {
-    /* Hide scrollbar for the whole page */
+    
     body {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
+        -ms-overflow-style: none;  
+        scrollbar-width: none;  
     }
 
     body::-webkit-scrollbar {
-        display: none;  /* Chrome, Safari, and Opera */
+        display: none;  
     }
 }

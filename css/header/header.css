@@ -10,15 +10,15 @@
     justify-content: space-between;
     align-items: center;
     z-index: 5;
-    opacity: 0; /* Start invisible */
-    pointer-events: none; /* No interaction when invisible */
-    transition: opacity 0.5s ease; /* Smooth transition for opacity */
+    opacity: 0; 
+    pointer-events: none; 
+    transition: opacity 0.5s ease; 
 }
 
-/* Class to make header visible */
+
 .header-visible {
     opacity: 1;
-    pointer-events: all; /* Allow interaction */
+    pointer-events: all; 
 }
 
 .logo {
