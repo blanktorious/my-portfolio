@@ -1,41 +1,45 @@
 .projects {
-    background: var(bg-color);
+    background: var(--bg-color);  /* Assuming this should be --bg-color, not bg-color */
     color: black;
 }
+
 .projects h2 {
     font-size: 6rem;
     margin-bottom: 5rem;
     color: white;
+    text-align: center;
 }
+
 .projects-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 2.5rem;
 }
+
 .projects-box {
-    background-color: var(--main-color);
+    background-color: #0a0e13;
+    color: white;
     height: 300px;
     border-radius: 3rem;
-    border: 5px solid transparent;
+    border: 1px solid var(--main-color);
     cursor: pointer;
     transition: 0.4s ease-in-out;
 }
+
 .projects-box:hover {
-    background: white;
-    color: black;
-    border: 5px solid var(--main-color);
     transform: scale(1.03);
 }
+
 .projects-box .projects-info {
     display: flex;
     flex-direction: column;
     text-align: left;
-    max-height: 200px;
-    justify-content: left;
+    justify-content: flex-start;  /* Changed from 'justify-content: left;' which is invalid */
     align-items: baseline;
-    padding: 5rem 5rem;
+    padding: 5rem;
 }
+
 .projects-info h4 {
     font-size: 3rem;
     font-weight: 800;
@@ -45,7 +49,44 @@
 .projects-info p {
     font-size: 1.6rem;
     font-weight: 600;
-    max-height: 100px;
     line-height: 1.7;
-    margin: auto;
+}
+
+@media (max-width: 1280px) {
+    .projects h2 {
+        font-size: 5rem;  /* Smaller font size for medium screens */
+        margin-bottom: 3rem;  /* Less margin for tighter spaces */
+    }
+
+    .projects-container {
+        grid-template-columns: repeat(1, 1fr);  /* Change to single column layout earlier */
+    }
+
+    .projects-box .projects-info {
+        padding: 2rem;  /* Less padding inside project boxes */
+    }
+}
+
+@media (max-width: 991px) {
+    .projects h2 {
+        font-size: 4rem;  /* Even smaller font size for smaller screens */
+    }
+
+    .projects-info h4 {
+        font-size: 2.5rem;  /* Smaller font size for project titles */
+    }
+
+    .projects-info p {
+        font-size: 1.4rem;  /* Smaller font size for descriptive text */
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-container {
+        gap: 1.5rem;  /* Reduce gap between items for small screens */
+    }
+
+    .projects-box {
+        height: 250px;  /* Slightly shorter boxes to fit better on small screens */
+    }
 }

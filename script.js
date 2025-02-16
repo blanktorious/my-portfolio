@@ -1,11 +1,42 @@
-let menuIcon = document.querySelector('#menu-icon');
+// Global selections
+let menuIcon = document.querySelector('menu-icon');
 let navbar = document.querySelector('.navbar');
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
+let lastKnownScrollPosition = 0;
+let ticking = false;
+const header = document.querySelector('.header');
+const sectionOffsets = {};
 
-window.onscroll = () => {
+// Functions
+function updateHeaderVisibility() {
+    const hash = window.location.hash;
+    header.classList.toggle('header-visible', !(hash === '#home' || hash === ''));
+}
+
+function setActiveSection(scrollPos) {
+    let currentSection = '';
+
+    for (const [id, offset] of Object.entries(sectionOffsets)) {
+        if (scrollPos >= offset - 150) {
+            currentSection = id;
+        }
+    }
+
+    if (currentSection && window.location.hash !== `#${currentSection}`) {
+        history.replaceState(null, null, `#${currentSection}`);
+        updateHeaderVisibility();
+    }
+}
+
+function calculateOffsets() {
+    sections.forEach(section => {
+        sectionOffsets[section.id] = section.offsetTop;
+    });
+}
+
+function updateNavLinks(top) {
     sections.forEach(sec => {
-        let top = window.scrollY;
         let offset = sec.offsetTop - 150;
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
@@ -13,24 +44,68 @@ window.onscroll = () => {
         if (top >= offset && top < offset + height) {
             navLinks.forEach(links => {
                 links.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                document.querySelector(`header nav a[href*=${id}]`).classList.add('active');
             });
         }
     });
-};
-// This function will be executed when the page is fully loaded
+}
+
+function updateExperience() {
+    const startDate = new Date("2022-04-01"); // Customize your start date
+    const currentDate = new Date();
+    let yearsExperience = currentDate.getFullYear() - startDate.getFullYear();
+    let monthsExperience = currentDate.getMonth() - startDate.getMonth();
+
+    if (monthsExperience < 0 || (monthsExperience === 0 && currentDate.getDate() < startDate.getDate())) {
+        monthsExperience += 12;
+        yearsExperience--;
+    }
+
+    const experienceText = `${yearsExperience} year${yearsExperience !== 1 ? 's' : ''}` +
+                           `${monthsExperience ? ` and ${monthsExperience} month${monthsExperience !== 1 ? 's' : ''}` : ''}`;
+
+    document.getElementById("yearsExperience").textContent = experienceText;
+}
+
+function filterSkills() {
+    const selectedCategory = document.getElementById('skillsFilter').value;
+    const cards = document.querySelectorAll('.skill-card');
+
+    cards.forEach(card => {
+        card.style.display = selectedCategory === 'all' || card.getAttribute('data-category') === selectedCategory ? '' : 'none';
+    });
+}
+
+// Event Listeners
 document.addEventListener('DOMContentLoaded', function() {
-    // Attach an event listener to the dropdown for the 'change' event
-    document.getElementById('skillsFilter').addEventListener('change', function() {
-        var selectedCategory = this.value; // Get the currently selected option's value
-        var cards = document.querySelectorAll('.skill-card'); // Get all skill cards
-        // Iterate over each card and determine whether it should be shown or hidden
-        cards.forEach(card => {
-            if (selectedCategory === 'all' || card.getAttribute('data-category') === selectedCategory) {
-                card.style.display = ''; // Show the card
-            } else {
-                card.style.display = 'none'; // Hide the card
-            }
+    calculateOffsets();
+    updateExperience();
+    document.getElementById('skillsFilter').addEventListener('change', filterSkills);
+    updateHeaderVisibility();
+});
+
+window.addEventListener('scroll', function() {
+    const top = window.scrollY;
+    updateNavLinks(top);
+
+    if (!ticking) {
+        window.requestAnimationFrame(function() {
+            setActiveSection(top);
+            ticking = false;
         });
+        ticking = true;
+    }
+});
+
+window.addEventListener('hashchange', updateHeaderVisibility);
+window.addEventListener('resize', calculateOffsets);
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuIcon = document.querySelector('.menu-icon');
+    const navbar = document.querySelector('.navbar');
+
+    menuIcon.addEventListener('click', function() {
+        navbar.classList.toggle('active');
     });
 });

@@ -6,6 +6,7 @@
     font-size: 6rem;
     margin-bottom: 3rem;
     color: white;
+    text-align: center;
 }
 
 .contact form {
@@ -34,4 +35,9 @@
     border: 2px solid var(--main-color);
     margin: 1.5rem 0;
     resize: none;
+}
+@media (max-width: 991px) {
+    .contact form {
+        flex-direction: column;
+    }
 }

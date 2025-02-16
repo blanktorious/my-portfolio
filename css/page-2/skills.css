@@ -7,8 +7,7 @@
     color: white;
     text-align: left;
     font-size: 5rem;
-    margin-top: 50px;
-    margin-bottom: 2rem;
+    margin-top: 7px;
 }
 
 .description {
@@ -107,4 +106,71 @@ figure img {
     margin-top: 5px;
     color: #686262; /* Maintaining text color */
     font-size: 1.2rem; /* Title size in skill card */
+}
+@media (max-width: 1285px) {
+    .skills-container {
+        max-width: 100%; /* Ensure the container doesn't exceed the width of the screen */
+        padding: 0 20px; /* Add padding to prevent content from touching the screen edges */
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust column sizing for better fit */
+    }
+
+    .description {
+        font-size: 1.8rem; /* Slightly smaller font size for descriptions */
+    }
+
+    .filter-dropdown-container {
+        font-size: 1.4rem; /* Reduce font size of the filter dropdown for smaller screens */
+    }
+}
+
+@media (max-width: 991px) {
+    .skills h2 {
+        font-size: 4rem; /* Reduce the size of the header */
+        margin-top: 5px; /* Adjust top margin */
+        margin-bottom: 2rem; /* Increase bottom margin for better spacing */
+    }
+
+    .description {
+        font-size: 1.5rem; /* Further reduce font size for descriptions */
+    }
+
+    .skills-container {
+        margin: 0 2rem; /* Reduce side margins */
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-container {
+        margin: 0 1rem; /* Further reduce side margins for very small screens */
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr; /* Single column layout for the grid */
+        padding: 10px; /* Reduce padding within the grid */
+    }
+
+    .skill-card h3 {
+        font-size: 1.8rem; /* Reduce font size in skill cards */
+    }
+
+    .skill-card p {
+        font-size: 1.4rem; /* Reduce paragraph font size in skill cards */
+    }
+
+    .filter-dropdown {
+        padding: 8px 16px; /* Adjust padding in the dropdown for better handling */
+    }
+}
+
+@media (max-width: 480px) {
+    .skills h2 {
+        font-size: 3.5rem; /* Further reduce the heading size for very small devices */
+    }
+
+    .filter-dropdown-container {
+        font-size: 1.2rem; /* Reduce the dropdown font size to save space */
+    }
 }

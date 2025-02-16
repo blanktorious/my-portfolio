@@ -22,3 +22,32 @@ body {
     background: var(--bg-color);
     color: var(--text-color);
 }
+section {
+    min-height: 100vh;
+    padding: 10rem 12% 10rem;
+}
+
+@media (max-width: 1285px) {
+    html {
+        font-size: 55%;
+    }
+}
+@media (max-width: 991px) {
+    header {
+        padding: 2rem 3%;
+    }
+    section {
+        padding: 10rem 3% 2rem;
+    }
+}
+@media (max-width: 768px) {
+    /* Hide scrollbar for the whole page */
+    body {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    body::-webkit-scrollbar {
+        display: none;  /* Chrome, Safari, and Opera */
+    }
+}

@@ -3,14 +3,24 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 4rem 12% 4rem;
+    padding: 2rem 12% 2rem;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 5;
+    opacity: 0; /* Start invisible */
+    pointer-events: none; /* No interaction when invisible */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity */
 }
+
+/* Class to make header visible */
+.header-visible {
+    opacity: 1;
+    pointer-events: all; /* Allow interaction */
+}
+
 .logo {
     font-size: 3rem;
     color: var(--text-color);
@@ -37,12 +47,46 @@
     color: var(--main-color);
     border-bottom: 3px solid var(--main-color);
 }
-#menu-icon {
+.menu-icon {
     font-size: 3.6rem;
     color: var(--main-color);
     display: none;
+    opacity: 0%;
+
 }
-section {
-    min-height: 100vh;
-    padding: 10rem 12% 10rem;
+
+@media (max-width: 1063px) {
+    .menu-icon {
+        position: relative;
+        left: 5px;
+        display: block;
+        opacity: 100%;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 35%;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(20px);
+        display: none;
+        flex-direction: column;
+        padding: 1rem 3%;
+        border-bottom-left-radius: 2rem;
+        border-left: 1px solid var(--main-color);
+        border-bottom: 1px solid var(--main-color);
+        text-align: center;
+    }
+    .navbar.active {
+        display: flex;
+    }
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        color: white;
+    }
+    .logo {
+        font-size: 2rem;
+    }
 }
