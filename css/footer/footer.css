@@ -1,22 +1,13 @@
-
 .footer {
     position: relative;
-    bottom: 0;
     width: 100%;
-    padding: 40px 0;
+    padding: 20px 0;
     background-color: var(--second-bg-color);
 }
 
 .footer .social {
     text-align: center;
-    padding-bottom: 25px;
     color: var(--main-color);
-}
-
-.footer ul li a {
-    color: white;
-    border-bottom: 3px solid transparent;
-    transition: 0.3s ease-in-out;
 }
 
 .footer .social a {
@@ -33,10 +24,6 @@
     transition: 0.3s ease-in-out;
 }
 
-.footer ul li a:hover {
-    border-bottom: 3px solid var(--main-color);
-}
-
 .footer .social a:hover {
     transform: scale(1.2) translateY(-10px);
     background-color: var(--main-color);
@@ -44,22 +31,8 @@
     box-shadow: 0 0 25px var(--main-color);
 }
 
-.footer ul {
-    margin-top: 0;
-    padding: 0;
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 0;
-    text-align: center;
-}
-
-.footer ul li {
-    display: inline-block;
-    padding: 0 15px;
-}
-
 .footer .copyright {
-    margin-top: 50px;
+    margin-top: 20px;
     text-align: center;
     font-size: 16px;
     color: white;
