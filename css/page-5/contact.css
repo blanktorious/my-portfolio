@@ -42,3 +42,7 @@
         flex-direction: column;
     }
 }
+
+.contact, .form {
+    min-height: auto;
+}
