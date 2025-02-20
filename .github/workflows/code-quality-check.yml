@@ -2,7 +2,7 @@ name: Code Quality and Security Checks
 
 on:
   push:
-    branches: [ main, feature/** ]
+    branches: [ feature/** ]
 
 jobs:
   lint-and-security:
